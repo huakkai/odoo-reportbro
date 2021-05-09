@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_ir_model_inherit" model="ir.ui.view">
+            <field name="name">IrModel</field>
+            <field name="model">ir.model</field>
+            <field name="inherit_id" ref="base.view_model_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='modules']" position="after">
+                    <field name="is_report"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_report_report_tree" model="ir.ui.view">
+            <field name="name">Report Report Tree</field>
+            <field name="model">report.report</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="model_id"></field>
+                </tree>
+            </field>
+        </record>
+        <record id="view_report_report_form" model="ir.ui.view">
+            <field name="name">Report Report Form</field>
+            <field name="model">report.report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="button_approve" string="Approve" attrs="{'invisible': [('state', 'in', ['approve', 'forbid'])]}" type="object" class="oe_highlight"/>
+                        <button name="button_draft" string="Draft" attrs="{'invisible': [('state', 'in', ['draft', 'forbid'])]}" type="object" class="oe_highlight"/>
+                        <button name="button_forbid" string="Forbid" attrs="{'invisible': [('state', 'in', ['draft', 'forbid'])]}" type="object" class="oe_highlight"/>
+                        <button name="button_designer" string="Report Designer" attrs="{'invisible': [('state', 'in', ['draft', 'forbid'])]}" type="object" class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,approve,forbid"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="model_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Report Line">
+                                <field name="line_ids" widget="one2many" context="{'default_model_id':model_id}">
+                                    <tree string="Report Line" editable="bottom">
+                                        <field name="model_id" readonly="1" invisible='1'/>
+                                        <field name="field_domain" invisible='1'/>
+                                        <field name="field_id" domain="[('id', 'in', field_domain)]"/>
+                                        <field name="field_description"/>
+                                        <field name="ttype"/>
+                                        <field name="is_report" widget="boolean_toggle"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_report_report" model="ir.actions.act_window">
+            <field name="name">Report Report</field>
+            <field name="res_model">report.report</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_report_report"
+                  name="Report Report"
+                  action="action_report_report"
+                  groups="base.group_user"/>
+    </data>
+</odoo>

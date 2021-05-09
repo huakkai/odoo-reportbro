@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_report_report,odoo-reportbro.report_report,odoo-reportbro.model_report_report,base.group_user,1,1,1,1
+access_report_report_line,odoo-reportbro.report_report_line,odoo-reportbro.model_report_report_line,base.group_user,1,1,1,1
