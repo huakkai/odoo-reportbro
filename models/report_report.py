@@ -10,6 +10,7 @@ class ReportReport(models.Model):
     model_id = fields.Many2one('ir.model', string='Model', ondelete="cascade", required=True)
     state = fields.Selection([('draft', 'Draft'), ('approve', 'Approve'), ('forbid', 'Forbid')], default='draft',
                              string='State')
+    report = fields.Text(string='Report')
     line_ids = fields.One2many('report.report.line', 'report_id', string='Report Line')
 
     def button_draft(self):
@@ -29,4 +30,9 @@ class ReportReport(models.Model):
             record.state = 'draft'
 
     def button_designer(self):
-        pass
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'apps',
+            'target': 'current',
+            'params': None,
+        }
