@@ -13,13 +13,20 @@ class ReportReport(models.Model):
     line_ids = fields.One2many('report.report.line', 'report_id', string='Report Line')
 
     def button_draft(self):
-        pass
+        for record in self:
+            record.state = 'draft'
 
     def button_approve(self):
-        pass
+        for record in self:
+            record.state = 'approve'
 
     def button_forbid(self):
-        pass
+        for record in self:
+            record.state = 'forbid'
+
+    def button_enable(self):
+        for record in self:
+            record.state = 'draft'
 
     def button_designer(self):
         pass

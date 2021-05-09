@@ -31,6 +31,7 @@
                         <button name="button_draft" string="Draft" attrs="{'invisible': [('state', 'in', ['draft', 'forbid'])]}" type="object" class="oe_highlight"/>
                         <button name="button_forbid" string="Forbid" attrs="{'invisible': [('state', 'in', ['draft', 'forbid'])]}" type="object" class="oe_highlight"/>
                         <button name="button_designer" string="Report Designer" attrs="{'invisible': [('state', 'in', ['draft', 'forbid'])]}" type="object" class="oe_highlight"/>
+                        <button name="button_enable" string="Enable" attrs="{'invisible': [('state', '!=', 'forbid')]}" type="object" class="oe_highlight"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,approve,forbid"/>
                     </header>
                     <sheet>
