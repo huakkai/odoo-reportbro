@@ -13,6 +13,10 @@
     ],
     'qweb': [
     ],
+    'js': ["static/src/dist/*.js"],
+    'js': ["static/src/dist/ext/*.js"],
+    'css': ["static/src/dist/*.css"],
+    'css': ["static/src/dist/ext/*.css"],
     'application': True,
     'installable': True,
 }
