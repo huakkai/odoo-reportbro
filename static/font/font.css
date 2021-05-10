@@ -1,8 +1,4 @@
 @font-face {
-            font-family: "firefly";
-            src: url("fireflysung.ttf");
-        }
-@font-face {
-            font-family: "yahei";
-            src: url("msyh.ttf");
-        }
+    font-family: "zh_CN";
+    src: url("fireflysung.ttf");
+}
