@@ -55,10 +55,10 @@ class ReportReport(models.Model):
                      "pattern": "",
                      "expression": "",
                      "showOnlyNameType": False}
-            if line.field_id.model_id.model in _data:
-                _data.get(line.field_id.model_id.model).append(value)
+            if line.field_id.model_id.name in _data:
+                _data.get(line.field_id.model_id.name).append(value)
             else:
-                _data[line.field_id.model_id.model] = [value]
+                _data[line.field_id.model_id.name] = [value]
         report_data = []
         for key, value in _data.items():
             index = STEP * list(_data.keys()).index(key)
@@ -81,3 +81,4 @@ class ReportReport(models.Model):
     def _get_cid(self, cid):
         cid += 1
         return cid
+

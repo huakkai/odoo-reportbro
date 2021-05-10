@@ -33,7 +33,7 @@ odoo.define('report_template', function (require) {
 
                     $('#reportbro').reportBro({
                         saveCallback: saveReport,
-                        // reportServerUrl: "http://localhost:8888/reportbro/report/run",
+                        reportServerUrl: "https://www.reportbro.com/report/run",
                         additionalFonts: [
                             {name: 'Firefly', value: 'firefly'}
                         ],
