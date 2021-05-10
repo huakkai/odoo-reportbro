@@ -1,0 +1,15 @@
+<?xml version="1.1" encoding="utf-8"?>
+<odoo>
+   <template id="report_assets_backend" name="report_assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/odoo-reportbro/static/src/js/report_template.js"></script>
+            <link href="/odoo-reportbro/static/src/dist/ext/spectrum.css" rel="stylesheet" type="text/css"/>
+            <link href="/odoo-reportbro/static/src/dist/reportbro.css" rel="stylesheet" type="text/css"/>
+            <link href="/odoo-reportbro/static/font/font.css" rel="stylesheet" type="text/css"/>
+            <script src="/odoo-reportbro/static/src/dist/ext/spectrum.js"></script>
+            <script src="/odoo-reportbro/static/src/dist/ext/autosize.js"></script>
+            <script src="/odoo-reportbro/static/src/dist/ext/JsBarcode.all.min.js"></script>
+            <script src="/odoo-reportbro/static/src/dist/reportbro.js"></script>
+        </xpath>
+    </template>
+</odoo>

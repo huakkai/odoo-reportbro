@@ -32,7 +32,10 @@ class ReportReport(models.Model):
     def button_designer(self):
         return {
             'type': 'ir.actions.client',
-            'tag': 'apps',
+            'tag': 'report_template',
             'target': 'current',
-            'params': None,
+            'params': {
+                'data': {},
+                'number': 9999,
+            },
         }
