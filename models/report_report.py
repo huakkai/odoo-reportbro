@@ -1,5 +1,8 @@
+import json
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
+
+STEP = 1000
 
 
 class ReportReport(models.Model):
@@ -30,12 +33,51 @@ class ReportReport(models.Model):
             record.state = 'draft'
 
     def button_designer(self):
+        report_data = self._get_report_data()
         return {
             'type': 'ir.actions.client',
             'tag': 'report_template',
             'target': 'current',
             'params': {
-                'data': '[{}]',
+                'data': report_data,
                 'number': 9999,
             },
         }
+
+    def _get_report_data(self):
+        cid = 0
+        _data = {}
+        for line in self.line_ids:
+            value = {"id": self._get_cid(cid),
+                     "name": line.field_description,
+                     "type": 'string',
+                     "eval": False,
+                     "pattern": "",
+                     "expression": "",
+                     "showOnlyNameType": False}
+            if line.field_id.model_id.model in _data:
+                _data.get(line.field_id.model_id.model).append(value)
+            else:
+                _data[line.field_id.model_id.model] = [value]
+        report_data = []
+        for key, value in _data.items():
+            index = STEP * list(_data.keys()).index(key)
+            children = []
+            for v in value:
+                v['id'] += index
+                children.append(v)
+            report_data.append(
+                {"id": index,
+                 "name": key,
+                 "type": "map",
+                 "eval": False,
+                 "pattern": "",
+                 "expression": "",
+                 "showOnlyNameType": False,
+                 "testData": "",
+                 "children": children})
+        return json.dumps(report_data)
+
+    def _get_cid(self, cid):
+        cid += 1
+        return cid
