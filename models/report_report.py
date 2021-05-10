@@ -35,7 +35,7 @@ class ReportReport(models.Model):
             'tag': 'report_template',
             'target': 'current',
             'params': {
-                'data': {},
+                'data': '[{}]',
                 'number': 9999,
             },
         }

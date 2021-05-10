@@ -7,12 +7,10 @@ odoo.define('report_template', function (require) {
         template: 'report.template',
         init: function (parent, params) {
             this.name = "Print";
-            this._super(parent);
             this.params = params;
             var data = params.params.data;
             var number = params.params.number;
-            this._rpc({route: '/report_server'}).then(function (stats) {
-                $(document).ready(function () {
+            $(document).ready(function () {
                     function saveReport() {
                         var report = $('#reportbro').reportBro('getReport');
                         $.ajax({
@@ -72,7 +70,6 @@ odoo.define('report_template', function (require) {
                         };
                     $('#reportbro').reportBro('load', report);
                 });
-            });
         },
         events: {
             'click button#btnPrint': 'print',

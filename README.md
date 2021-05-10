@@ -6,6 +6,7 @@ Integration of odoo and reportbro, drag and drop printing format design, support
 ---
 
 ![Image text](https://github.com/huakkai/odoo-reportbro/blob/master/static/github/reportbro-3.jpg)
+![Image text](https://github.com/huakkai/odoo-reportbro/blob/master/static/github/1620632520161.jpg)
 ![Image text](https://github.com/huakkai/odoo-reportbro/blob/master/static/github/reportbro-1.jpg)
 ![Image text](https://github.com/huakkai/odoo-reportbro/blob/master/static/github/reportbro-2.jpg)
 

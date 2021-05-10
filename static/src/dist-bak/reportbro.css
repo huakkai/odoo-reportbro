@@ -1,72 +1,25 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800);:root {
-    --rbro-primary-text-color: #191919;
-    --rbro-active-button-color: #191919;
-    --rbro-mainPanel-bg-color: #3B3B3B;
-    --rbro-mainPanel-logo-bg-color: #3B3B3B;
-    --rbro-mainPanel-button-color: #F33198;
-    --rbro-mainPanel-button-hover-color: #FF63B6;
-    --rbro-mainPanel-text-color: #FFFFFF;
-    --rbro-mainPanel-item-color: #C5C5C5;
-    --rbro-detailPanel-button-color: #3CC4FF;
-    --rbro-detailPanel-button-hover-color: #009EE2;
-    --rbro-detailPanel-focus-color: #3CC4FF;
-    --rbro-detailPanel-section-color: rgba(59,59,59,0.2);
-    --rbro-detailPanel-section-hover-color: rgba(59,59,59,0.15);
-    --rbro-detailPanel-sectionHeader-color: #191919;
-    --rbro-popup-main-color: #3CC4FF;
-    --rbro-popup-item-bg-color: #3CC4FF;
-    --rbro-popup-item-alt-bg-color: #0177A9;
-    --rbro-popup-item-text-color: #FFFFFF;
-    --rbro-popup-description-color: #8C8C8C;
-    --rbro-popup-content-border-color: #191919;
-}
-
-.rbroClassicTheme {
-    --rbro-primary-text-color: #444444;
-    --rbro-active-button-color: #004864;
-    --rbro-mainPanel-bg-color: #004864;
-    --rbro-mainPanel-logo-bg-color: #C5C5C5;
-    --rbro-mainPanel-button-color: #336D83;
-    --rbro-mainPanel-button-hover-color: #FDC700;
-    --rbro-mainPanel-text-color: #F1F3F4;
-    --rbro-mainPanel-item-color: #DDDDDD;
-    --rbro-detailPanel-button-color: #004864;
-    --rbro-detailPanel-button-hover-color: #FDC700;
-    --rbro-detailPanel-focus-color: #004864;
-    --rbro-detailPanel-section-color: #D4E6F4;
-    --rbro-detailPanel-section-hover-color: rgba(113,171,218,0.2);
-    --rbro-detailPanel-sectionHeader-color: #004864;
-    --rbro-popup-main-color: #004864;
-    --rbro-popup-item-bg-color: #D4E6F4;
-    --rbro-popup-item-alt-bg-color: #B2E6D1;
-    --rbro-popup-item-text-color: #444444;
-    --rbro-popup-description-color: #666666;
-    --rbro-popup-content-border-color: #444444;
-}
-
-/* normalizing styles */
-#reportbro * {
-    font-family: inherit;
-    outline: none;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800);*, html {
+    font-family:inherit;
+    outline:none;
 }
 
 #reportbro {
     font-family: 'Open Sans', sans-serif;
     text-rendering: optimizelegibility;
-    outline: none;
-    color: var(--rbro-primary-text-color);
+    color: #444444;
     font-weight: 400;
     font-size: 16px;
     margin: 0;
     padding: 0;
+}
+
+#reportbro {
     position: absolute;
     width: 100%;
-    min-width: 1140px; /* prevent menu item wrap on too small screens */
+    min-width: 980px; /* prevent broken layout too small screens */
     height: 100%;
     top: auto;
     left: auto;
-    -webkit-user-select: none;
-    -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
@@ -94,33 +47,22 @@
 }
 
 .rbroContainer input, .rbroContainer select, .rbroContainer textarea {
-    color: var(--rbro-primary-text-color);
     width: 100%;
     box-sizing: border-box;
     height: 28px;
     border-radius: 4px;
     border: 1px solid rgba(0,0,0,0.1);
-    background-color: #F1F3F4;
+    background-color: #f1f3f4;
     transition: all 0.2s linear;
     padding: 0 4px;
-    margin: 0;
     outline: none;
     font-size: 12px;
-    font-weight: inherit;
-    box-shadow: none;
-}
-
-.rbroContainer select {
-    transition: none;
 }
 
 .rbroContainer input[type=checkbox] {
     height: auto;
     width: auto;
     margin: 0;
-    padding: 0;
-    display: inline-block;
-    opacity: inherit;
 }
 
 .rbroContainer input[type=file] {
@@ -138,20 +80,20 @@
 }
 
 .rbroContainer input:focus, .rbroContainer select:focus, .rbroContainer textarea:focus {
-    background: #FFFFFF;
-    border: 1px solid var(--rbro-detailPanel-focus-color);
+    background: #ffffff;
+    border: 1px solid #004864;
     outline: none;
 }
 
 .rbroContainer input[disabled], .rbroContainer select[disabled], .rbroContainer textarea[disabled] {
     background: transparent;
-    color: #8C8C8C;
+    color: #AAAAAA;
 }
 
 /* Menu panel */
 
 .rbroMenuPanel {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     position: absolute;
     width: 100%;
     height: 45px;
@@ -172,17 +114,14 @@
     left: 0;
     top: 0;
     width: 230px;
-    background-image: url(rb_logo_white.png);
+    /*logo*/
+    background-image: url(rb_logo.png);
     background-repeat: no-repeat;
     height: 45px;
     background-size: auto 85%;
     background-position: center;
-    background-color: var(--rbro-mainPanel-logo-bg-color);
+    background-color: rgba(113,171,218,0.3);
     z-index: 10;
-}
-
-.rbroClassicTheme .rbroLogo {
-    background-image: url(rb_logo_dark.png);
 }
 
 .rbroToolButtonContainer {
@@ -197,37 +136,8 @@
     align-items: center;
 }
 
-.rbroElementButtons {
-    height: 45px;
-}
-
 .rbroActionButtons > div, .rbroElementButtons > div {
     display: inline-block;
-}
-
-.rbroZoom {
-    margin: 4px;
-}
-
-.rbroZoom .rbroZoomLevel {
-    font-size: 11px;
-    vertical-align: middle;
-    width: 32px;
-    display: inline-block;
-    text-align: right;
-}
-
-.rbroZoomButton.rbroRoundButton {
-    margin: 0 0 0 4px;
-}
-
-.rbroZoomButton.rbroRoundButton:not([disabled]) {
-    color: var(--rbro-primary-text-color);
-    background-color: #E4E7EA;
-}
-
-.rbroZoomButton.rbroRoundButton:not([disabled]):hover {
-    background-color: rgba(0,0,0,0.15);
 }
 
 /* Sidebar menu enabled  */
@@ -239,19 +149,19 @@
 .rbroMenuPanelSidebar .rbroLogo {
     top: auto;
     bottom: 0;
-    background-color: var(--rbro-mainPanel-logo-bg-color);
+    background-color: rgba(113,171,218,0.3);
 }
 
 .rbroMenuPanelSidebar .rbroDocumentPanel {
-    right: 92px;
-    padding: 10px 0;
+    right: 114px;
+    width: calc(100% - 744px);
 }
 
 .rbroMenuPanelSidebar .rbroMenuPanel {
     right: 0;
     top: 0;
     left: auto;
-    width: 92px;
+    width: 104px;
     height: 100%;
     padding: 2px;
     box-sizing: border-box;
@@ -276,30 +186,15 @@
     border-bottom: 1px solid #E4E7EA;
     margin-top: 5px;
     margin-bottom: 10px;
-    height: auto;
 }
 
 .rbroMenuPanelSidebar .rbroMenuButton {
     border: none;
 }
 
-.rbroMenuPanelSidebar .rbroActionButtons {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.rbroMenuPanelSidebar .rbroActionButtons .rbroActionButton {
+.rbroMenuPanelSidebar .rbroActionButtons > div button {
     display: block;
-    margin: 4px 1px;
-}
-
-.rbroMenuPanelSidebar .rbroZoom {
-    margin: 4px 0;
-}
-
-.rbroMenuPanelSidebar .rbroZoomButton {
-    display: inline-block;
+    margin-bottom: 2px;
 }
 
 .rbroMenuPanelSidebar .rbroContainer {
@@ -318,9 +213,9 @@
 
 .rbroMainPanel {
     left: 0;
-    background-color: var(--rbro-mainPanel-bg-color);
+    background-color: #004864;
     width: 230px;
-    color: var(--rbro-mainPanel-text-color);
+    color: #f2f2f2;
 }
 
 .rbroMainPanel ul, .rbroMainPanel li {
@@ -330,7 +225,8 @@
 }
 
 .rbroMainPanel > ul > li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid;
+    border-color: rgba(255, 255, 255, 0.1);
     line-height: 20px;
 }
 
@@ -350,14 +246,6 @@
     text-transform: uppercase;
 }
 
-.rbroMenuItem.rbroUnusedParameter {
-    background-color: #191919;
-}
-
-.rbroMenuItem.rbroUnusedParameter:hover {
-    background-color: rgba(34, 34, 34,0.8);
-}
-
 .rbroMenuItem > div {
     display: flex;
     align-items: center;
@@ -369,65 +257,55 @@
     -ms-text-overflow: ellipsis;
     text-overflow: ellipsis;
     overflow: hidden;
-    max-width: 100%;
+    width: 100%;
 }
 
 .rbroMenuItem:hover {
     background-color: rgba(116, 116, 130, 0.2);
 }
 
-.rbroMenuItem.rbroMenuItemActive {
-    background-color: #FFFFFF;
-    color: var(--rbro-primary-text-color);
-}
-
 .rbroMenuItem.rbroError {
-    background-color: #FFCCCC;
-    color: var(--rbro-primary-text-color);
+    background-color: #FF9999;
+    color: #444444;
 }
 
-.rbroMenuItem.rbroMenuItemActive.rbroError {
-    background-color: #FFFFFF;
-    color: #FF3B30;
+.rbroMenuItem.rbroMenuItemActive {
+    background-color: #ffffff;
+    color: #444444;
 }
 
 .rbroMenuItem.rbroMenuItemDragOver {
-    border-bottom: 3px solid #6CDF86;
+    border-bottom: 3px solid #00ad69;
 }
 
 ul ul .rbroMenuItem {
-    padding: 2px 5px;
+    padding: 2px 5px 2px 20px;
     font-size: 14px;
     text-transform: none;
-    color: var(--rbro-mainPanel-text-color);
+    color: #DDDDDD;
 }
 
 ul ul ul .rbroMenuItem {
-    padding: 2px 5px 2px 12px;
-    color: var(--rbro-mainPanel-item-color);
+    padding: 2px 5px 2px 32px;
+    color: #95badc;
+}
+
+ul ul ul .rbroMenuItem.rbroMenuItemNoChildren {
+    padding: 2px 5px 2px 34px;
 }
 
 ul ul ul ul .rbroMenuItem {
-    padding: 2px 5px 2px 20px;
-}
-
-ul ul ul ul ul .rbroMenuItem {
-    padding: 2px 5px 2px 30px;
-}
-
-ul ul ul ul ul ul .rbroMenuItem {
-    padding: 2px 5px 2px 40px;
+    padding: 2px 5px 2px 48px;
 }
 
 ul ul .rbroMenuItemText {
-    width: calc(100% - 56px);
+    width: 170px;
 }
 
 .rbroMenuArrow {
     font-size: 12px;
     margin-right: 2px;
     transition:  all 0.2s linear;
-    margin-left: 2px;
 }
 
 .rbroMenuItem.rbroMenuItemOpen .rbroMenuArrow {
@@ -438,25 +316,14 @@ ul ul .rbroMenuItemText {
     display: none;
 }
 
-.rbroMainPanelSizer {
-    width: 3px;
-    cursor: ew-resize;
-    background: #C5C5C5;
-    transition: background 0.2s linear;
-}
-
-.rbroMainPanelSizer:hover {
-    background: #009EE2;
-}
-
 /* Detail Panel */
 
 .rbroDetailPanel {
+    left: 230px;
     width: 390px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     font-size: 13px;
     margin-top: 2px;
-    border-right: 2px solid #E4E7EA;
 }
 
 .rbroEmptyDetailPanel {
@@ -468,7 +335,6 @@ ul ul .rbroMenuItemText {
 }
 
 .rbroEmptyDetailPanel .rbroLogo {
-    background-image: url(rb_logo_dark.png);
     width: 390px;
     height: 70px;
     background-size: auto 80%;
@@ -496,11 +362,10 @@ ul ul .rbroMenuItemText {
 
 .rbroFormRow label {
     width: 35%;
-    cursor: pointer;
 }
 
 .rbroFormRow label.rbroDisabled {
-    color: #C5C5C5;
+    color: #AAAAAA;
 }
 
 .rbroFormField {
@@ -530,7 +395,7 @@ ul ul .rbroMenuItemText {
     width: 32%;
 }
 
-.rbroSelector textarea, .rbroSelector input {
+.rbroSplit textarea {
     width: 85%;
 }
 
@@ -550,11 +415,11 @@ ul ul .rbroMenuItemText {
 .rbroPanelSection, .rbroPanelSection.rbroPanelSectionHeaderOpen:hover {
     justify-content: center;
     cursor: pointer;
-    background-color: var(--rbro-detailPanel-section-color);
+    background-color: #D4E6F4
 }
 
 .rbroPanelSection:hover {
-    background-color: var(--rbro-detailPanel-section-hover-color);
+    background-color: rgba(113,171,218,0.2);
 }
 
 .rbroPanelSection.rbroPanelSectionHeaderOpen {
@@ -566,7 +431,7 @@ ul ul .rbroMenuItemText {
     align-items: center;
     text-transform: uppercase;
     font-size: 18px;
-    color: var(--rbro-detailPanel-sectionHeader-color);
+    color: #004864;
 }
 
 .rbroPanelSection .rbroPanelSectionHeader > span {
@@ -574,29 +439,27 @@ ul ul .rbroMenuItemText {
 }
 
 .rbroFormRow.rbroError {
-    background-color: #FFCCCC;
+    background-color: #ffcccc;
     align-items: flex-start;
 }
 
 /* Document Panel - Template layouting and PDF preview */
 
 .rbroDocumentPanel {
-    padding-top: 10px;
-    right: 0;
-    border: 2px solid #E4E7EA;
-}
-
-.rbroHasTabs.rbroDocumentPanel {
-    padding: 0;
+    right: 5px;
+    width: calc(100% - 630px);
 }
 
 .rbroDocument {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-    margin: 0 auto;
+    margin: 10px auto;
     overflow: hidden;
     position: relative;
-    transform-origin: top left;
+}
+
+.rbroHasTabs .rbroDocument {
+    margin: 0 auto 10px auto;
 }
 
 .rbroDocumentContent {
@@ -620,14 +483,15 @@ ul ul .rbroMenuItemText {
 
 .rbroDocumentBandDescription {
     display: none;
-    pointer-events: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .rbroElementDragOver {
-    background-color: rgba(204,204,204,0.2);
+    background-color: rgba(204,204,204,0.1);
 }
 
-.rbroElementDragOver > .rbroDocumentBandDescription {
+.rbroElementDragOver .rbroDocumentBandDescription {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -649,19 +513,19 @@ ul ul .rbroMenuItemText {
     border-right: 1px solid #E4E7EA;
     font-size: 16px;
     font-weight: 400;
-    color: var(--rbro-primary-text-color);
-    background-color: #F1F3F4;
+    color: #3baae3;
+    background-color: #F9F9F9;
     position: relative;
 }
 
 .rbroTabButton.rbroActive {
     background-color: #FFFFFF;
-    color: var(--rbro-detailPanel-button-color);
+    color: #444444;
     cursor: text;
 }
 
 .rbroTabButton > span {
-    color: var(--rbro-primary-text-color);
+    color: #444444;
     cursor: pointer;
     font-weight: 400;
     position: absolute;
@@ -669,8 +533,8 @@ ul ul .rbroMenuItemText {
 }
 
 .rbroTabButton:not(.rbroActive):hover {
-    background-color: #F1F3F4;
-    color: var(--rbro-detailPanel-button-color);
+    background-color: #F9F9F9;
+    color: #004864;
 }
 
 .rbroTabButton .rbroIcon-cancel {
@@ -693,19 +557,10 @@ ul ul .rbroMenuItemText {
 }
 
 .rbroTabButton .rbroIcon-cancel:hover, .rbroXlsxDownlaodButton:hover {
-    color: var(--rbro-detailPanel-button-color);
+    color: #3baae3;
 }
 
 /* Document Panel - Elements */
-.rbroSectionElement {
-    position: absolute;
-    box-sizing: border-box;
-}
-
-.rbroSectionBandElement {
-    position: absolute;
-}
-
 .rbroDocElement {
     position: absolute;
     box-sizing: border-box;
@@ -723,23 +578,15 @@ ul ul .rbroMenuItemText {
     display: flex;
 }
 
-.rbroFrameElement .rbroContentContainerHelper {
-    overflow: initial;
-}
-
 .rbroImageElement .rbroContentContainerHelper {
     height: calc(100% + 2px);
     width: calc(100% + 2px);
 }
 
 .rbroDocElementContentText {
-    white-space: pre-wrap;
+    white-space: pre-line;
     overflow: hidden;
     display: flex;
-}
-
-.rbroDocElementContentText span {
-    width: 100%;
 }
 
 .rbroDocElementAlignCenter, .rbroDocElementAlignCenter .rbroDocElementContentText {
@@ -771,24 +618,12 @@ ul ul .rbroMenuItemText {
 }
 
 .rbroTextElement, .rbroImageElement, .rbroFrameElement {
-    border: 1px dotted #8C8C8C;
+    border: 1px dotted #B0B0B0;
 }
 
-.rbroTableElement table, .rbroTableElement table thead, .rbroTableElement table tbody, .rbroTableElement table tfoot, .rbroTableElement table tr,
-.rbroTableElement table th, .rbroTableElement table td {
+.rbroTableElement table {
     border-collapse: collapse;
-    border-spacing: 0;
     position: relative;
-    margin: 0;
-    padding: 0;
-    min-width: 0;
-    min-height: 0;
-    font-weight: 400;
-    color: inherit;
-    box-sizing: border-box;
-    background-color: transparent;
-    text-align: left;
-    box-shadow: none;
 }
 
 .rbroTableTextElement {
@@ -798,28 +633,24 @@ ul ul .rbroMenuItemText {
 
 .rbroBorderTableFrameRow .rbroTableTextElement, .rbroBorderTableRow .rbroTableTextElement,
 .rbroBorderTableFrame .rbroTableTextElement, .rbroBorderTableNone .rbroTableTextElement {
-    border: 1px dotted #C5C5C5 !important;
+    border: 1px dotted #B0B0B0 !important;
 }
 
 .rbroBorderTableFrameRow .rbroTableTextElement.rbroSelected, .rbroBorderTableRow .rbroTableTextElement.rbroSelected,
 .rbroBorderTableFrame .rbroTableTextElement.rbroSelected, .rbroBorderTableNone .rbroTableTextElement.rbroSelected,
 .rbroBorderTableGrid .rbroTableTextElement.rbroSelected {
-    border: 1px solid #C5C5C5 !important;
+    border: 1px solid #B0B0B0 !important;
 }
 
 .rbroTextElement.rbroSelected, .rbroImageElement.rbroSelected, .rbroBarCodeElement.rbroSelected,
 .rbroFrameElement.rbroSelected {
-    border: 1px solid #C5C5C5;
+    border: 1px solid #B0B0B0;
 }
 
 .rbroPageBreakElement {
     background-color: #000000;
 }
 
-.rbroSelectionArea {
-    position: absolute;
-    border: 1px solid #000000;
-}
 
 /* Document template styling, element resizer  */
 .rbroDocumentBand {
@@ -835,38 +666,21 @@ ul ul .rbroMenuItemText {
 .rbroDividerMarginLeft, .rbroDividerMarginRight {
     top: 0;
     bottom: 0;
-    border-left: 1px dashed #8C8C8C;
+    border-left: 1px dashed #999999;
 }
 
 .rbroDividerMarginTop, .rbroDividerMarginBottom, .rbroDividerFooter, .rbroDividerHeader {
     left: 0;
     right: 0;
-    border-top: 1px dashed #8C8C8C;
-}
-
-.rbroDividerSection, .rbroDividerSectionBand {
-    left: 0;
-    right: 0;
-}
-
-.rbroDividerSection {
-    border-top: 1px solid #95badc;
-}
-
-.rbroDividerSectionBand {
-    border-top: 1px dashed #95badc;
+    border-top: 1px dashed #999999;
 }
 
 .rbroSizer {
     width: 7px;
     height: 7px;
     position: absolute;
-    border: 1px solid #808080;
-    background-color: #F1F3F4;
-}
-
-.rbroSizer.rbroSizerMove {
-    cursor: move;
+    border: 1px solid #606060;
+    background-color: #F0F0F0;
 }
 
 .rbroSizerN {
@@ -923,23 +737,22 @@ ul ul .rbroMenuItemText {
     cursor: pointer;
     transition: all 0.2s linear;
     display: inline-block;
+    vertical-align: top;
     box-sizing: border-box;
     border: inherit;
-    margin: 0;
 }
 
 .rbroMenuItem .rbroButton {
     margin-left: 5px;
-    min-width: 18px;
 }
 
 button.rbroActionButton {
     background-color: #E4E7EA;
-    color: var(--rbro-primary-text-color);
+    color: #444444;
     font-size: 16px;
     font-weight: 400;
     padding: 6px 11px;
-    margin: 0 2px 0 0;
+    margin-right: 2px;
     border: 2px solid transparent;
     border-radius: 4px;
 }
@@ -949,23 +762,23 @@ button.rbroActionButton:hover, button.rbroActionButton.rbroButtonActive {
 }
 
 button.rbroActionButton.rbroButtonActive {
-    border: 2px solid var(--rbro-active-button-color);
+    border: 2px solid #004864;
 }
 
 .rbroMenuButton {
     height: 45px;
-    padding: 12px 13px;
+    padding: 12px 14px;
     text-align: center;
     border-right: 1px solid #E4E7EA;
     font-size: 16px;
     font-weight: 400;
-    color: var(--rbro-primary-text-color);
-    background-color: #FFFFFF;
+    color: #444444;
+    background-color: #ffffff;
 }
 
 .rbroMenuButton:not(.rbroActive):hover {
-    background-color: #F1F3F4;
-    color: var(--rbro-detailPanel-button-color);
+    background-color: #F9F9F9;
+    color: #004864;
 }
 
 .rbroMenuButton span {
@@ -975,44 +788,40 @@ button.rbroActionButton.rbroButtonActive {
 button.rbroButton[disabled], button.rbroButton[disabled]:hover,
 button.rbroMenuButton[disabled], button.rbroMenuButton[disabled]:hover,
 .rbroButton.rbroDisabled, .rbroButton.rbroDisabled:hover {
-    color: #C5C5C5;
-    background-color: #FFFFFF;
+    color: #cccccc;
+    background-color: #ffffff;
     cursor: not-allowed;
     border-color: #E4E7EA;
 }
 
 .rbroDeleteButton {
-    color: var(--rbro-mainPanel-item-color);
+    color: #CCCCCC;
 }
 
 .rbroMenuItem.rbroError .rbroDeleteButton {
-    color: var(--rbro-primary-text-color);
+    color: #444444;
 }
 
 .rbroDeleteButton:hover, .rbroMenuItem.rbroError .rbroDeleteButton:hover {
-    color: var(--rbro-mainPanel-button-hover-color);
+    color: #fdc700;
 }
 
 .rbroRoundButton {
     border-radius: 50%;
-    color: #FFFFFF;
-    background-color: var(--rbro-detailPanel-button-color);
+    color: #ffffff;
+    background-color: #004864;
     font-size: 14px;
     padding: 5px;
     border: none;
 }
 
-.rbroRoundButton:hover{
-    background-color: var(--rbro-detailPanel-button-hover-color);
-    color: #FFFFFF;
-}
-
 .rbroMenuItem .rbroRoundButton {
-    background-color: var(--rbro-mainPanel-button-color);
+    background-color: #336D83;
 }
 
-.rbroMenuItem .rbroRoundButton:hover {
-    background-color: var(--rbro-mainPanel-button-hover-color);
+.rbroRoundButton:hover{
+    background-color: #fdc700;
+    color: #ffffff;
 }
 
 /* Common */
@@ -1071,13 +880,12 @@ button.rbroMenuButton[disabled], button.rbroMenuButton[disabled]:hover,
 /* Popup Window */
 .rbroPopupWindow {
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
     font-weight: 400;
     position: absolute;
-    background-color: #FFFFFF;
-    color: var(--rbro-primary-text-color);
+    background-color: white;
+    color: inherit;
     box-sizing: border-box;
-    border: 2px solid var(--rbro-popup-main-color);
+    border: 2px solid #004864;
     z-index: 999999;
     border-radius: 4px;
 }
@@ -1092,7 +900,7 @@ button.rbroMenuButton[disabled], button.rbroMenuButton[disabled]:hover,
     position: absolute;
     top: -13px;
     right: -13px;
-    background-color: var(--rbro-detailPanel-button-color);
+    background-color: #004864;
 }
 
 .rbroPopupWindow ul {
@@ -1113,19 +921,23 @@ button.rbroMenuButton[disabled], button.rbroMenuButton[disabled]:hover,
 }
 
 .rbroPopupWindow li:not(.rbroPopupItemSeparator):hover {
-    background-color: #F1F3F4;
+    background-color: #f2f2f2;
 }
 
 .rbroPopupWindow .rbroPopupItemSeparator {
     text-align: center;
-    background-color: var(--rbro-popup-item-bg-color);
-    color: var(--rbro-popup-item-text-color);
+    background-color: #D4E6F4;
     font-weight: 600;
     padding: 8px 10px;
 }
 
+.rbroPopupWindow .rbroPopupItemSeparator:first-child {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
 .rbroPopupWindow .rbroPopupItemSeparator.rbroParameterGroup {
-    background-color: var(--rbro-popup-item-alt-bg-color);
+    background-color: #B2E6D1;
 }
 
 .rbroPopupWindow .rbroPopupItemHeader {
@@ -1134,124 +946,76 @@ button.rbroMenuButton[disabled], button.rbroMenuButton[disabled]:hover,
 
 .rbroPopupWindow .rbroPopupItemDescription {
     font-size: 11px;
-    color: var(--rbro-popup-description-color);
-}
-
-.rbroPopupWindowContent table, .rbroPopupWindowContent table thead, .rbroPopupWindowContent table tbody,
-.rbroPopupWindowContent table tr, .rbroPopupWindowContent table th, .rbroPopupWindowContent table td {
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin: 0;
-    padding: 0;
-    background-color: transparent;
-    text-align: left;
-    font-weight: 400;
-    color: inherit;
-    box-sizing: border-box;
-    box-shadow: none;
-    position: relative;
-    top: 0;
-    left: 0;
-    vertical-align: middle;
+    color: #666666;
 }
 
 .rbroPopupWindowContent table {
     width: 98%;
+    border-collapse: collapse;
     margin: 10px auto 0;
 }
 
 .rbroPopupWindowContent table th:not(:first-child) {
-    background-color: var(--rbro-popup-item-bg-color);
-    color: var(--rbro-popup-item-text-color);
-    border: 1px solid #E4E7EA;
-    padding: 5px 2px;
+    background-color: #D4E6F4;
+    border: 1px solid #444444;
+    padding: 5px 0;
     font-weight: 600;
-    text-align: center;
 }
 
 .rbroPopupWindowContent table th:first-child {
     width: 2%;
 }
 
-.rbroPopupWindowContent table th .rbroButton {
-    margin-left: 5px;
+.rbroPopupWindowContent table td {
+    border: 1px solid #444444;
+    padding: 0;
 }
 
-.rbroPopupWindowContent table td:not(:first-child) {
-    border: 1px solid #8C8C8C;
+.rbroPopupWindowContent table td.rbroHasFocus {
+    border: 1px solid #468FED;
 }
+
+.rbroPopupWindowContent table td.rbroHasFocus input {
+    border: 2px solid #468FED;
+    padding: 2px;
+}
+
 
 .rbroPopupWindowContent table input, .rbroPopupWindowContent table input:focus {
-    color: var(--rbro-primary-text-color);
     width: 100%;
     box-sizing: border-box;
     height: 30px;
     padding: 4px;
-    margin: 0;
     border: none;
-    border-radius: 0;
     font-size: 12px;
-    font-weight: 400;
-    display: inline-block;
-    opacity: 1;
-    background-color: transparent;
-    box-shadow: none;
-}
-
-.rbroPopupWindowContent table td.rbroHasFocus {
-    border: 1px solid #009EE2;
-}
-
-.rbroPopupWindowContent table td.rbroHasFocus input {
-    border: 2px solid #009EE2;
-    padding: 2px;
 }
 
 .rbroPopupWindowContent table .rbroButton {
     vertical-align: baseline;
 }
 
-.rbroFullWidthButton {
-    display: block;
-    margin: 0 12px 10px 38px;
-}
-
-.rbroFullWidthButton .rbroPopupWindowButton {
-    width: 100%;
+.rbroPopupWindowButton.rBFullWidthButton {
+    width: 96%;
+    margin-left: 3%;
 }
 
 .rbroPopupWindowButton {
     padding: 12px;
     text-align: center;
-    color: var(--rbro-primary-text-color);
-    background-color: #F1F3F4;
+    color: #444444;
+    background-color: #F9F9F9;
     font-size: 16px;
 }
 
 .rbroPopupWindowButton:hover {
     background-color: #E4E7EA;
-}
-
-.rbroPopupSearch, .rbroPopupSearch:focus {
-    width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 32px;
-    box-sizing: border-box;
-    border: none;
-    transition: all 0.2s linear;
-    padding: 0 4px;
-    outline: none;
-    font-size: 12px;
-    border-radius: 4px 4px 0 0 ;
-    box-shadow: none;
+    color: #004864;
 }
 
 /* ReportBro spectrum color picker */
 .rbroColorPickerContainer {
     transition: all 0.2s linear;
-    background-color: #F1F3F4;
+    background-color: #f1f3f4;
     border-radius: 20px 4px 4px 20px;
     border: 1px solid rgba(0,0,0,0.1);
     height: 28px;
@@ -1259,24 +1023,24 @@ button.rbroMenuButton[disabled], button.rbroMenuButton[disabled]:hover,
 }
 
 .rbroColorPickerContainer.rbroActive {
-    border: 1px solid var(--rbro-detailPanel-focus-color);
-    background-color: #FFFFFF;
+    border: 1px solid #004864;
+    background-color: #ffffff;
 }
 
 .rbroColorPickerContainer input, .rbroColorPickerContainer input:focus {
     height: 28px;
     margin: 0 0 0 30px;
     width: calc(100% - 30px);
-    background-color: #F1F3F4;
+    background-color: #f1f3f4;
     border: none;
-    color: var(--rbro-primary-text-color);
+    color: #444444;
     display: block;
     font-size: 13px;
     padding: 0 5px;
 }
 
 .rbroColorPickerContainer.rbroActive input {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 }
 
 .rbroColorContainer .sp-color, .rbroColorContainer .sp-hue, .rbroColorContainer .sp-clear {
@@ -1316,13 +1080,13 @@ button.rbroMenuButton[disabled], button.rbroMenuButton[disabled]:hover,
 }
 
 .rbroColorContainer.sp-container {
-    background-color: #F1F3F4;
-    border: 1px solid #F1F3F4;
+    background-color: #f1f3f4;
+    border: 1px solid #004864;
     border-radius: 4px;
 }
 
 .rbroColorContainer .sp-dragger {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 }
 
 .rbroColorContainer .sp-palette .sp-thumb-el {
@@ -1333,7 +1097,7 @@ button.rbroMenuButton[disabled], button.rbroMenuButton[disabled]:hover,
 }
 
 .rbroColorContainer .sp-palette .sp-thumb-el:hover, .sp-container .sp-palette .sp-thumb-el.sp-thumb-active {
-    border: 2px solid var(--rbro-popup-main-color);
+    border: 2px solid #004864;
 }
 
 .rbroColorContainer .sp-palette .sp-thumb-light.sp-thumb-active .sp-thumb-inner,
@@ -1343,21 +1107,19 @@ button.rbroMenuButton[disabled], button.rbroMenuButton[disabled]:hover,
 @font-face {
   font-family: 'reportbro';
   src:
-    url(iconfonts/reportbro.woff2?dfba9764036e57e79f141c3cb1a7217e) format('woff2'),
-    url(iconfonts/reportbro.ttf?60e5420b88ce35d3f2079602ef5d34b4) format('truetype'),
-    url(iconfonts/reportbro.woff?124bfb9eb5ebe7d0a2ce07c8cead63ca) format('woff'),
-    url(iconfonts/reportbro.svg?e88e71aada50f6cc33a0ee598ef395ed#reportbro) format('svg');
+    url(iconfonts/reportbro.woff2?6bcb6e796b23153374a7aedd81294819) format('woff2'),
+    url(iconfonts/reportbro.ttf?3f7299a6ec788dbd7b5e3de58c2aced4) format('truetype'),
+    url(iconfonts/reportbro.woff?e6d1469c29d8ba11e6a5d874aba4909d) format('woff'),
+    url(iconfonts/reportbro.svg?653c807d8c603c0aa9f08b6e919de9d1#reportbro) format('svg');
   font-weight: normal;
   font-style: normal;
-  font-display: block;
 }
 
 [class^="rbroIcon-"], [class*=" rbroIcon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'reportbro' !important;
-  speak: never;
+  speak: none;
   font-style: normal;
-  font-weight: normal;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
@@ -1367,30 +1129,6 @@ button.rbroMenuButton[disabled], button.rbroMenuButton[disabled]:hover,
   -moz-osx-font-smoothing: grayscale;
 }
 
-.rbroIcon-insert-report:before {
-  content: "\E936";
-}
-.rbroIcon-row-delete:before {
-  content: "\E92F";
-}
-.rbroIcon-column-delete:before {
-  content: "\E930";
-}
-.rbroIcon-row-add-below:before {
-  content: "\E931";
-}
-.rbroIcon-row-add-above:before {
-  content: "\E932";
-}
-.rbroIcon-column-add-left:before {
-  content: "\E933";
-}
-.rbroIcon-column-add-right:before {
-  content: "\E934";
-}
-.rbroIcon-section:before {
-  content: "\E92E";
-}
 .rbroIcon-frame:before {
   content: "\E915";
 }
@@ -1460,7 +1198,7 @@ button.rbroMenuButton[disabled], button.rbroMenuButton[disabled]:hover,
 .rbroIcon-grid:before {
   content: "\E910";
 }
-.rbroIcon-console:before {
+.rbroIcon-code:before {
   content: "\E911";
 }
 .rbroIcon-image:before {
@@ -1514,9 +1252,6 @@ button.rbroMenuButton[disabled], button.rbroMenuButton[disabled]:hover,
 .rbroIcon-underline:before {
   content: "\E908";
 }
-.rbroIcon-strikethrough:before {
-  content: "\E900";
-}
 .rbroIcon-text-align-left:before {
   content: "\E909";
 }
@@ -1533,7 +1268,7 @@ button.rbroMenuButton[disabled], button.rbroMenuButton[disabled]:hover,
   content: "\E805";
 }
 .rbroIcon-arrow-right:before {
-  content: "\E935";
+  content: "\E900";
 }
 .rbroIcon-arrow-down:before {
   content: "\E60C";
@@ -1592,7 +1327,7 @@ button.rbroMenuButton[disabled], button.rbroMenuButton[disabled]:hover,
 @media only screen {
   /* don't hide the input from screen-readers and keyboard access
  */
-  .switch-light input[type=checkbox] {
+  .switch-light input {
     position: absolute;
     opacity: 0;
     z-index: 3;
