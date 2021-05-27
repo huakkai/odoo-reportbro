@@ -26,14 +26,14 @@ class ReportReportLine(models.Model):
     def _compute_field_domain(self):
         for record in self:
             fields = []
-            record.field_domain = self._get_fields(fields=fields, record=record.model_id)
+            record.field_domain = self._get_fields(fields=fields, model=record.model_id)
 
-    def _get_fields(self, fields=None, record=None):
-        for field in record.field_id:
+    def _get_fields(self, fields=None, model=None):
+        for field in model.field_id:
             if field.ttype != 'one2many':
                 fields.append(field.id)
             else:
-                record = self.env['ir.model'].search([('model', '=', field.relation)], limit=1)
-                if record.is_report:
-                    self._get_fields(fields=fields if fields else [], record=record)
+                model = self.env['ir.model'].search([('model', '=', field.relation)], limit=1)
+                if model.is_report and field.relation != self.report_id.model_id.model:
+                    self._get_fields(fields=fields if fields else [], model=model)
         return fields
