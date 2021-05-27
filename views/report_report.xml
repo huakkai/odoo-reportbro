@@ -9,6 +9,19 @@
                 <xpath expr="//field[@name='modules']" position="after">
                     <field name="is_report"/>
                 </xpath>
+                <xpath expr="//notebook/page[@name='fields']/field[@name='field_id']/tree/field[@name='state']" position="after">
+                    <field name="is_report" widget="boolean_toggle"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_ir_model_fields_inherit" model="ir.ui.view">
+            <field name="name">IrModelFields</field>
+            <field name="model">ir.model.fields</field>
+            <field name="inherit_id" ref="base.view_model_fields_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group/group/field[@name='help']" position="after">
+                    <field name="is_report"/>
+                </xpath>
             </field>
         </record>
         <record id="view_report_report_tree" model="ir.ui.view">
